@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="params">
+		<fieldset name="ckslideshowstyles_maximenuparams">
+            <field
+                name="loader"
+                type="cklist"
+                default="pie"
+                label="MOD_SLIDESHOWCK_LOADER_LABEL"
+                description="MOD_SLIDESHOWCK_LOADER_DESC"
+                styles="position:absolute;left: 310px;top:16px;width: 70px;"
+                labelstyles="position:absolute;left: 250px;top:0px;width:125px;min-width:50px;display:block;text-align:right;"
+                 >
+                <option value="pie">MOD_SLIDESHOWCK_LOADER_PIE</option>
+                <option value="bar">MOD_SLIDESHOWCK_LOADER_BAR</option>
+                <option value="none">MOD_SLIDESHOWCK_LOADER_NONE</option>
+            </field>
+                
+            <field
+                name="width"
+                type="cktext"
+                default="auto"
+                label="MOD_SLIDESHOWCK_WIDTH_LABEL"
+                description="MOD_SLIDESHOWCK_WIDTH_DESC"
+                suffix="px"
+                styles="position:absolute;left: 205px;top:40px;width: 30px;"
+                labelstyles="position:absolute;left: 155px;top:40px;"
+                suffixstyles="position:absolute;left: 240px;top:43px;"
+            />
+            
+            <field
+                name="height"
+                type="cktext"
+                default="400"
+                label="MOD_SLIDESHOWCK_HEIGHT_LABEL"
+                description="MOD_SLIDESHOWCK_HEIGHT_DESC"
+                suffix="px"
+                styles="position:absolute;left: 0px;top:150px;width: 30px;"
+                labelstyles="position:absolute;left: 0px;top:132px;"
+                suffixstyles="position:absolute;left: 35px;top:153px;"
+            />
+            
+            <field
+                name="navigation"
+                type="ckradio"
+                default="2"
+                label="MOD_SLIDESHOWCK_NAVIGATION_LABEL"
+                description="MOD_SLIDESHOWCK_NAVIGATION_DESC"
+                styles="position:absolute;left: 50px;top:310px;width: 100px;background: transparent;"
+                labelstyles="position:absolute;left: 40px;top:288px;"
+                 >
+                <option value="2">MOD_SLIDESHOWCK_NAVIGATION_HOVER</option>
+                <option value="1">MOD_SLIDESHOWCK_NAVIGATION_ALWAYS</option>
+                <option value="0">MOD_SLIDESHOWCK_NAVIGATION_NONE</option>
+            </field>
+
+            <field
+                name="thumbnails"
+                type="ckradio"
+                default="1"
+                label="MOD_SLIDESHOWCK_THUMBNAILS_LABEL"
+                description="MOD_SLIDESHOWCK_THUMBNAILS_DESC"
+                styles="position:absolute;left: 170px;top:310px;width: 100px;background: transparent;"
+                labelstyles="position:absolute;left: 160px;top:288px;"
+                 >
+                <option value="1">JYES</option>
+                <option value="0">JNO</option>
+            </field>
+
+            <field
+                name="thumbnailwidth"
+                type="cktext"
+                default="100"
+                label="MOD_SLIDESHOWCK_THUMBNAILWIDTH_LABEL"
+                description="MOD_SLIDESHOWCK_THUMBNAILWIDTH_DESC"
+                suffix="x"
+                styles="position:absolute;left: 170px;top:380px;width: 30px;"
+                labelstyles="position:absolute;left: 160px;top:360px;"
+                suffixstyles="position:absolute;left: 205px;top:380px;"
+            />
+
+            <field
+                name="thumbnailheight"
+                type="cktext"
+                default="75"
+                label="MOD_SLIDESHOWCK_THUMBNAILHEIGHT_LABEL"
+                description="MOD_SLIDESHOWCK_THUMBNAILHEIGHT_DESC"
+                suffix="px"
+                styles="position:absolute;left: 215px;top:380px;width: 30px;"
+                suffixstyles="position:absolute;left: 250px;top:380px;"
+            />
+            
+            <field
+                name="pagination"
+                type="ckradio"
+                default="1"
+                label="MOD_SLIDESHOWCK_PAGINATION_LABEL"
+                description="MOD_SLIDESHOWCK_PAGINATION_DESC"
+                styles="position:absolute;left: 330px;top:310px;width: 100px;background: transparent;"
+                labelstyles="position:absolute;left: 320px;top:288px;"
+                 >
+                <option value="1">JYES</option>
+                <option value="0">JNO</option>
+            </field>     
+        </fieldset>
+	</fields>
+</form>

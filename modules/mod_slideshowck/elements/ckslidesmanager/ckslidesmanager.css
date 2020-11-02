@@ -1,0 +1,247 @@
+/**
+ * @copyright	Copyright (C) 2012 Cedric KEIFLIN alias ced1870
+ * http://www.joomlack.fr
+ * @license		GNU/GPL
+ * */
+
+/* bootstrap override */
+#ckslideslist .chzn-container {
+    display: none !important;
+}
+
+#ckslideslist select {
+    display: inline-block !important;
+}
+
+#ckslideslist li {
+    list-style: none;
+}
+/* fin override */
+
+#options-styles {position:relative;}
+ 
+#ckaddslide {
+	padding: 5px;
+	color: 333;
+	text-decoration: none;
+	font-weight: normal;
+	text-align: center;
+	background: linear-gradient(top, #fff, #eee);
+	background: -moz-linear-gradient(top, #fff, #eee);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #777), color-stop(.5, #555), color-stop(.5, #333), to(#000)); 
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #ddd;
+	border-top: 1px solid #ddd;
+	cursor: pointer;
+	background: #f4f4f4 url(add.png) left center no-repeat;
+	text-indent: 30px;
+	height: 35px;
+}
+
+#ckaddslide:hover {
+	background-color: #eee;
+}
+
+
+.ckslideaccordeoncontent {
+    /*overflow: visible !important;*/
+}
+
+.ckslide {
+	margin: 3px 0 !important;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	border: #ccc 1px solid;
+	clear: both;
+	min-height: 60px;
+    list-style: none;
+    max-width: 550px;
+	background: #fff;
+	position: relative;
+}
+
+.placeholder {
+	border: 1px dashed #3399ff;
+	min-height: 100px;
+	max-width: 550px;
+}
+
+.ckslide input, .ckslide select {
+	clear: both;
+	float: none;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	padding: 5px;
+}
+
+.ckslidecontainer {
+	border-left: 1px solid #ccc;
+	float: left;
+	width: 88%;
+	padding-left: 2%;
+        position: relative;
+}
+
+.ckslidehandle {
+	cursor: move;
+	background: #f4f4f4;
+	min-height: 60px;
+	width: 8%;
+	float: left;
+	border-radius: 5px 0 0 5px;
+	-moz-border-radius: 5px 0 0 5px;
+	background: url(arrow_move.gif) center 40px no-repeat;
+}
+
+.ckslidenumber {
+	color: #cbcbcb;
+	text-align: center;
+	text-shadow: 1px 1px #fff;
+	font-size: 20px;
+	padding-top: 5px;
+	background: #eee;
+	height: 25px;
+	border-bottom: 1px solid #ccc;
+}
+
+.ckslidetoggle {
+	background: red;
+	bottom: 0;
+	height: 40px;
+	left: 0;
+	position: absolute;
+	width: 8%;
+	background-color: #dff0d8;
+	/*border-color: #d6e9c6;*/
+	color: #468847;
+	cursor: pointer;
+	border-radius: 0 0 0 5px;
+	border-top: 1px solid #d6e9c6;
+}
+
+.ckslidetoggler {
+	font-size: 16px;
+	font-weight: bold;
+	margin: 10px 0;
+	text-align: center;
+}
+
+.ckslidetoggle[data-state="0"] {
+	background-color: #f2dede;
+	border-top: 1px solid #eed3d7;
+	color: #b94a48;
+}
+
+.ckslidetoggle[data-state="0"] + .ckslidecontainer {
+	opacity: 0.3;
+}
+
+.cksliderow {
+	clear: both;
+}
+
+.ckslideimgname {
+        width: 200px;
+	margin-left: 5px;
+}
+
+.ckselectimg, .ckslidedelete {
+	color: 333;
+	text-decoration: none;
+	font-weight: normal;
+	text-align: center;
+	background: #f4f4f4;
+	background: linear-gradient(top, #fff, #eee);
+	background: -moz-linear-gradient(top, #fff, #eee);
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	border: 1px solid #ddd;
+	border-top: 1px solid #ddd;
+	cursor: pointer;
+}
+
+.ckselectimg:hover {
+	background: #eee;
+}
+
+.ckslidedelete:hover {
+	background: url(delete_hover.png) center center no-repeat;
+}
+
+.ckselectimg {
+	display: block;
+	margin-left: 80px;
+}
+
+.ckslidedelete {
+/*	float: right !important;*/
+        top: 0;
+        position: absolute;
+        right :0;
+        display: block;
+        width: 16px !important;
+        height: 16px;
+        background: url(delete.png) center center no-repeat;
+        border: none;
+}
+
+.ckslideimgcontainer {
+	float:left;
+	height:64px;
+	width:64px;
+	overflow:hidden;
+	border: 5px solid #fff;
+	box-shadow: 0px 0px 1px #333;
+	border-radius: 5px;
+	margin: 5px 5px 5px 0;
+}
+
+.ckslideimgcontainer img {
+	margin: 0 !important;
+    height:64px;
+	width:64px;
+}
+
+.ckslidelabel {
+	margin: 5px;
+	width: 75px;
+	display: inline-block;
+}
+
+.ckslidecaptiontext, .ckslidelinktext, .ckslidevideotext {
+	width: 200px;
+}
+
+.ckslidetargettext {
+	width: 210px;
+}
+
+.ckslideaccordeonbutton {
+    padding: 5px;
+    margin: 2px;
+    color: 333;
+    text-decoration: none;
+    font-weight: normal;
+    display: block;
+    float: left;
+    text-align: center;
+    background: #f4f4f4;
+    background: linear-gradient(top, #fff, #eee);
+    background: -moz-linear-gradient(top, #fff, #eee);
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.ckslideaccordeonbutton:hover, .ckslideaccordeonbutton.open {
+    background: #eee;
+    color: #0080ff;
+}
+
+

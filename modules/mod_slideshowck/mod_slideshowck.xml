@@ -1,0 +1,1535 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="3.0"
+	client="site"
+	method="upgrade">
+	<name>Slideshow CK</name>
+	<author>Cédric KEIFLIN</author>
+	<creationDate>Avril 2012</creationDate>
+	<copyright>Cédric KEIFLIN</copyright>
+	<license>GNU/GPL 3 http://www.gnu.org/licenses/gpl.html</license>
+	<authorEmail>ced1870@gmail.com</authorEmail>
+	<authorUrl>http://www.joomlack.fr</authorUrl>
+	<version>1.4.41</version>
+	<description>MOD_SLIDESHOWCK_XML_DESCRIPTION</description>
+	<files>
+		<filename module="mod_slideshowck">mod_slideshowck.php</filename>
+		<folder>tmpl</folder>
+		<folder>assets</folder>
+		<folder>elements</folder>
+		<folder>language</folder>
+		<folder>images</folder>
+		<folder>themes</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_slideshowck.xml</filename>
+		<filename>logo_slideshowck.png</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_slideshowck.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_slideshowck.sys.ini</language>
+		<language tag="fr-FR">language/fr-FR/fr-FR.mod_slideshowck.ini</language>
+		<language tag="fr-FR">language/fr-FR/fr-FR.mod_slideshowck.sys.ini</language>
+	</languages>
+	<updateservers>
+		<server type="extension" priority="1" name="Slideshow CK Update">http://update.joomlack.fr/mod_slideshowck_update.xml</server>
+	</updateservers>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field 
+					name="linkdocumentation" 
+					type="cklink"
+					label="MOD_SLIDESHOWCK_DOWNLOAD_DOCUMENTATTION"
+					url="http://www.joomlack.fr/en/slideshowck/slideshow-documentation"
+					icon="page_white_acrobat.png"
+					/>
+				<field 
+					name="linkthemes" 
+					type="cklink"
+					label="MOD_SLIDESHOWCK_DOWNLOAD_THEMES"
+					url="http://www.joomlack.fr/en/slideshowck/slideshow-themes"
+					icon="palette.png"
+					/>
+				<field 
+					name="ckvotejed" 
+					type="ckvotejed"
+					label="MOD_SLIDESHOWCK_VOTE_JED"
+					url="http://extensions.joomla.org/extensions/extension/photos-a-images/slideshow/slideshow-ck"
+					/>
+				<field 
+					name="ckcheckversion" 
+					type="ckcheckversion"
+					/>
+				<field 
+					name="ckcheckpluginversion" 
+					type="ckcheckpluginversion"
+					version="1.2.4"
+					/>
+			</fieldset>
+			<fieldset name="slidessource" label="MOD_SLIDESHOWCK_OPTIONS_SLIDESSOURCE">
+				<field
+					name="slidesssource"
+					type="cklist"
+					default="slidesmanager"
+					label="MOD_SLIDESHOWCK_SLIDESSOURCE_LABEL"
+					description="MOD_SLIDESHOWCK_SLIDESSOURCE_DESC"
+					icon="image_link.png"
+				>
+					<option value="slidesmanager">MOD_SLIDESHOWCK_SLIDEMANAGER</option>
+				</field>
+			</fieldset>
+			<fieldset name="slides" label="MOD_SLIDESHOWCK_OPTIONS_SLIDES">
+				<field
+					name="slides"
+					type="ckslidesmanager"
+					label="MOD_SLIDESHOWCK_SLIDES_LABEL"
+					description="MOD_SLIDESHOWCK_SLIDES_DESC"
+					default="[{|qq|imgname|qq|:|qq|modules/mod_slideshowck/images/slides/bridge.jpg|qq|,|qq|imgcaption|qq|:|qq|This bridge is very long|qq|,|qq|imgtitle|qq|:|qq|This is a bridge|qq|,|qq|imgthumb|qq|:|qq|../modules/mod_slideshowck/images/slides/bridge.jpg|qq|,|qq|imglink|qq|:|qq||qq|,|qq|imgtarget|qq|:|qq|_parent|qq|,|qq|imgalignment|qq|:|qq|default|qq|,|qq|imgvideo|qq|:|qq||qq|,|qq|slidearticleid|qq|:|qq||qq|,|qq|slidearticlename|qq|:|qq||qq|,|qq|imgtime|qq|:|qq||qq|},{|qq|imgname|qq|:|qq|modules/mod_slideshowck/images/slides/road.jpg|qq|,|qq|imgcaption|qq|:|qq|This slideshow uses a JQuery script adapted from &lt;a href=|dq|http://www.pixedelic.com/plugins/camera/|dq|&gt;Pixedelic&lt;/a&gt;|qq|,|qq|imgtitle|qq|:|qq|On the road again|qq|,|qq|imgthumb|qq|:|qq|../modules/mod_slideshowck/images/slides/road.jpg|qq|,|qq|imglink|qq|:|qq||qq|,|qq|imgtarget|qq|:|qq|_parent|qq|,|qq|imgalignment|qq|:|qq|default|qq|,|qq|imgvideo|qq|:|qq||qq|,|qq|slidearticleid|qq|:|qq||qq|,|qq|slidearticlename|qq|:|qq||qq|,|qq|imgtime|qq|:|qq||qq|},{|qq|imgname|qq|:|qq|modules/mod_slideshowck/images/slides/big_bunny_fake.jpg|qq|,|qq|imgcaption|qq|:|qq||qq|,|qq|imgtitle|qq|:|qq||qq|,|qq|imgthumb|qq|:|qq|../modules/mod_slideshowck/images/slides/big_bunny_fake.jpg|qq|,|qq|imglink|qq|:|qq||qq|,|qq|imgtarget|qq|:|qq|_parent|qq|,|qq|imgalignment|qq|:|qq|default|qq|,|qq|imgvideo|qq|:|qq|http://player.vimeo.com/video/2203727|qq|,|qq|slidearticleid|qq|:|qq||qq|,|qq|slidearticlename|qq|:|qq||qq|,|qq|imgtime|qq|:|qq||qq|}]"
+					filter="raw"
+				/>
+				<field
+					name="spacerfolderimport"
+					type="ckspacer"
+					style="title"
+					label="MOD_SLIDESHOWCK_SPACERFOLDERIMPORT_LABEL"
+				/>
+				<field
+					name="playlistparamsinfo"
+					label="MOD_SLIDESHOWCK_CHECKPARAMSPLUGIN"
+					type="cktestslideshowparamsplugin"
+					style="link"
+					icon="information.png"
+				/>
+			</fieldset>
+			<fieldset name="slidesfromfolder" label="MOD_SLIDESHOWCK_OPTIONS_FROMFOLDER">
+				<field
+					name="slideshowparamsinfofromfolder"
+					label="MOD_SLIDESHOWCK_CHECKPARAMSPLUGIN"
+					type="cktestslideshowparamsplugin"
+					style="link"
+					icon="information.png"
+				/>
+			</fieldset>
+			<fieldset name="slidesfromarticlecategory" label="MOD_SLIDESHOWCK_OPTIONS_FROMARTICLECATEGORY">
+				<field
+					name="slideshowparamsinfoarticle"
+					label="MOD_SLIDESHOWCK_CHECKPARAMSPLUGIN"
+					type="cktestslideshowparamsplugin"
+					style="link"
+					icon="information.png"
+				/>
+			</fieldset>
+			<fieldset name="slidesfromflickr" label="MOD_SLIDESHOWCK_OPTIONS_FROMFLICKR">
+				<field
+					name="slideshowparamsinfoflickr"
+					label="MOD_SLIDESHOWCK_CHECKPARAMSPLUGIN"
+					type="cktestslideshowparamsplugin"
+					style="link"
+					icon="information.png"
+				/>
+			</fieldset>
+			<fieldset name="styles" label="MOD_SLIDESHOWCK_OPTIONS_STYLES" addfieldpath="/modules/mod_slideshowck/elements">
+				<field
+					name="theme"
+					type="ckfolderlist"
+					directory="modules/mod_slideshowck/themes"
+					hide_none="true"
+					hide_default="true"
+					label="MOD_SLIDESHOWCK_THEME_LABEL"
+					description="MOD_SLIDESHOWCK_THEME_DESC"
+					icon="photo.png" />
+				<field
+					name="skin"
+					type="cklist"
+					default="camera_amber_skin"
+					label="MOD_SLIDESHOWCK_SKIN_LABEL"
+					description="MOD_SLIDESHOWCK_SKIN_DESC"
+					icon="palette.png" >
+					<option value="camera_amber_skin">camera_amber_skin</option>
+					<option value="camera_ash_skin">camera_ash_skin</option>
+					<option value="camera_azure_skin">camera_azure_skin</option>
+					<option value="camera_beige_skin">camera_beige_skin</option>
+					<option value="camera_black_skin">camera_black_skin</option>
+					<option value="camera_blue_skin">camera_blue_skin</option>
+					<option value="camera_brown_skin">camera_brown_skin</option>
+					<option value="camera_burgundy_skin">camera_burgundy_skin</option>
+					<option value="camera_charcoal_skin">camera_charcoal_skin</option>
+					<option value="camera_chocolate_skin">camera_chocolate_skin</option>
+					<option value="camera_coffee_skin">camera_coffee_skin</option>
+					<option value="camera_cyan_skin">camera_cyan_skin</option>
+					<option value="camera_fuchsia_skin">camera_fuchsia_skin</option>
+					<option value="camera_gold_skin">camera_gold_skin</option>
+					<option value="camera_green_skin">camera_green_skin</option>
+					<option value="camera_grey_skin">camera_grey_skin</option>
+					<option value="camera_indigo_skin">camera_indigo_skin</option>
+					<option value="camera_khaki_skin">camera_khaki_skin</option>
+					<option value="camera_lime_skin">camera_lime_skin</option>
+					<option value="camera_magenta_skin">camera_magenta_skin</option>
+					<option value="camera_maroon_skin">camera_maroon_skin</option>
+					<option value="camera_orange_skin">camera_orange_skin</option>
+					<option value="camera_olive_skin">camera_olive_skin</option>
+					<option value="camera_pink_skin">camera_pink_skin</option>
+					<option value="camera_pistachio_skin">camera_pistachio_skin</option>
+					<option value="camera_pink_skin">camera_pink_skin</option>
+					<option value="camera_red_skin">camera_red_skin</option>
+					<option value="camera_tangerine_skin">camera_tangerine_skin</option>
+					<option value="camera_turquoise_skin">camera_turquoise_skin</option>
+					<option value="camera_violet_skin">camera_violet_skin</option>
+					<option value="camera_white_skin">camera_white_skin</option>
+					<option value="camera_yellow_skin">camera_yellow_skin</option>
+				</field>
+
+				<field
+					name="alignment"
+					type="cklist"
+					default="center"
+					label="MOD_SLIDESHOWCK_ALIGNEMENT_LABEL"
+					description="MOD_SLIDESHOWCK_ALIGNEMENT_DESC"
+					icon="image_alignment.png"
+				>
+					<option value="topLeft">MOD_SLIDESHOWCK_TOPLEFT</option>
+					<option value="topCenter">MOD_SLIDESHOWCK_TOPCENTER</option>
+					<option value="topRight">MOD_SLIDESHOWCK_TOPRIGHT</option>
+					<option value="centerLeft">MOD_SLIDESHOWCK_MIDDLELEFT</option>
+					<option value="center">MOD_SLIDESHOWCK_CENTER</option>
+					<option value="centerRight">MOD_SLIDESHOWCK_MIDDLERIGHT</option>
+					<option value="bottomLeft">MOD_SLIDESHOWCK_BOTTOMLEFT</option>
+					<option value="bottomCenter">MOD_SLIDESHOWCK_BOTTOMCENTER</option>
+					<option value="bottomRight">MOD_SLIDESHOWCK_BOTTOMRIGHT</option>
+				</field>
+				<field
+					name="slideshowstylesillustration"
+					type="ckbackground"
+					background="slideshowck_styles.png"
+					styles="height:264px;width:356px;"
+				/>
+				<field
+					name="loader"
+					type="cklist"
+					default="pie"
+					label="MOD_SLIDESHOWCK_LOADER_LABEL"
+					description="MOD_SLIDESHOWCK_LOADER_DESC"
+				>
+					<option value="pie">MOD_SLIDESHOWCK_LOADER_PIE</option>
+					<option value="bar">MOD_SLIDESHOWCK_LOADER_BAR</option>
+					<option value="none">MOD_SLIDESHOWCK_LOADER_NONE</option>
+				</field>
+
+				<field
+					name="width"
+					type="cktext"
+					default="auto"
+					label="MOD_SLIDESHOWCK_WIDTH_LABEL"
+					description="MOD_SLIDESHOWCK_WIDTH_DESC"
+					suffix=""
+				/>
+				<field
+					name="height"
+					type="cktext"
+					default="62%"
+					label="MOD_SLIDESHOWCK_HEIGHT_LABEL"
+					description="MOD_SLIDESHOWCK_HEIGHT_DESC"
+					suffix=""
+				/>
+				<field
+					name="minheight"
+					type="cktext"
+					default="150"
+					label="MOD_SLIDESHOWCK_MINHEIGHT_LABEL"
+					description="MOD_SLIDESHOWCK_MINHEIGHT_DESC"
+					suffix="px"
+				/>
+				<field
+					name="navigation"
+					type="ckradio"
+					default="2"
+					label="MOD_SLIDESHOWCK_NAVIGATION_LABEL"
+					description="MOD_SLIDESHOWCK_NAVIGATION_DESC"
+					class="btn-group"
+				>
+					<option value="2">MOD_SLIDESHOWCK_NAVIGATION_HOVER</option>
+					<option value="1">MOD_SLIDESHOWCK_NAVIGATION_ALWAYS</option>
+					<option value="0">MOD_SLIDESHOWCK_NAVIGATION_NONE</option>
+				</field>
+
+				<field
+					name="thumbnails"
+					type="ckradio"
+					default="1"
+					label="MOD_SLIDESHOWCK_THUMBNAILS_LABEL"
+					description="MOD_SLIDESHOWCK_THUMBNAILS_DESC"
+					class="btn-group"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field
+					name="thumbnailwidth"
+					type="cktext"
+					default="100"
+					label="MOD_SLIDESHOWCK_THUMBNAILWIDTH_LABEL"
+					description="MOD_SLIDESHOWCK_THUMBNAILWIDTH_DESC"
+					suffix="px"
+				/>
+
+				<field
+					name="thumbnailheight"
+					type="cktext"
+					default="75"
+					label="MOD_SLIDESHOWCK_THUMBNAILHEIGHT_LABEL"
+					description="MOD_SLIDESHOWCK_THUMBNAILHEIGHT_DESC"
+					suffix="px"
+				/>
+
+				<field
+					name="pagination"
+					type="ckradio"
+					default="1"
+					label="MOD_SLIDESHOWCK_PAGINATION_LABEL"
+					description="MOD_SLIDESHOWCK_PAGINATION_DESC"
+					class="btn-group"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+
+			</fieldset>
+
+			<fieldset name="effects" label="MOD_SLIDESHOWCK_OPTIONS_EFFECTS">
+
+				<field
+					name="effect"
+					type="cklist"
+					default="random"
+					multiple="true"
+					label="MOD_SLIDESHOWCK_EFFECT_LABEL"
+					description="MOD_SLIDESHOWCK_EFFECT_DESC"
+					icon="application_view_gallery.png"
+					styles="width:200px;"
+				>
+					<option value="random">random</option>
+					<option value="kenburns">kenburns</option>
+					<option value="simpleFade">simpleFade</option>
+					<option value="curtainTopLeft">curtainTopLeft</option>
+					<option value="curtainTopRight">curtainTopRight</option>
+					<option value="curtainBottomLeft">curtainBottomLeft</option>
+					<option value="curtainBottomRight">curtainBottomRight</option>
+					<option value="curtainSliceLeft">curtainSliceLeft</option>
+					<option value="curtainSliceRight">curtainSliceRight</option>
+					<option value="blindCurtainTopLeft">blindCurtainTopLeft</option>
+					<option value="blindCurtainTopRight">blindCurtainTopRight</option>
+					<option value="blindCurtainBottomLeft">blindCurtainBottomLeft</option>
+					<option value="blindCurtainBottomRight">blindCurtainBottomRight</option>
+					<option value="blindCurtainSliceBottom">blindCurtainSliceBottom</option>
+					<option value="blindCurtainSliceTop">blindCurtainSliceTop</option>
+					<option value="stampede">stampede</option>
+					<option value="mosaic">mosaic</option>
+					<option value="mosaicReverse">mosaicReverse</option>
+					<option value="mosaicRandom">mosaicRandom</option>
+					<option value="mosaicSpiral">mosaicSpiral</option>
+					<option value="mosaicSpiralReverse">mosaicSpiralReverse</option>
+					<option value="topLeftBottomRight">topLeftBottomRight</option>
+					<option value="bottomRightTopLeft">bottomRightTopLeft</option>
+					<option value="bottomLeftTopRight">bottomLeftTopRight</option>
+					<option value="bottomLeftTopRight">bottomLeftTopRight</option>
+					<option value="scrollLeft">scrollLeft</option>
+					<option value="scrollRight">scrollRight</option>
+					<option value="scrollHorz">scrollHorz</option>
+					<option value="scrollBottom">scrollBottom</option>
+					<option value="scrollTop">scrollTop</option>
+				</field>
+
+				<field
+					name="time"
+					type="cktext"
+					default="7000"
+					label="MOD_SLIDESHOWCK_TIME_LABEL"
+					description="MOD_SLIDESHOWCK_TIME_DESC"
+					icon="hourglass.png"
+					suffix="ms" />
+
+				<field
+					name="transperiod"
+					type="cktext"
+					default="1500"
+					label="MOD_SLIDESHOWCK_TRANSPERIOD_LABEL"
+					description="MOD_SLIDESHOWCK_TRANSPERIOD_DESC"
+					icon="hourglass.png"
+					suffix="ms" />
+				<field
+					name="captioneffect"
+					type="cklist"
+					default="random"
+					label="MOD_SLIDESHOWCK_CAPTIONEFFECT_LABEL"
+					description="MOD_SLIDESHOWCK_CAPTIONEFFECT_DESC"
+					icon="application_view_gallery.png"
+					styles=""
+				>
+					<option value="moveFromLeft">moveFromLeft</option>
+					<option value="moveFromRight">moveFromRight</option>
+					<option value="moveFromTop">moveFromTop</option>
+					<option value="moveFromBottom">moveFromBottom</option>
+					<option value="fadeIn">fadeIn</option>
+					<option value="fadeFromLeft">fadeFromLeft</option>
+					<option value="fadeFromRight">fadeFromRight</option>
+					<option value="fadeFromTop">fadeFromTop</option>
+					<option value="fadeFromBottom">fadeFromBottom</option>
+					<option value="none">none</option>
+				</field>
+				<field
+					name="portrait"
+					type="ckradio"
+					default="0"
+					label="MOD_SLIDESHOWCK_PORTRAIT_LABEL"
+					description="MOD_SLIDESHOWCK_PORTRAIT_DESC"
+					icon="shape_handles.png"
+					class="btn-group"
+				>
+					<option value="0">JYES</option>
+					<option value="1">JNO</option>
+				</field>
+
+				<field
+					name="autoAdvance"
+					type="ckradio"
+					default="1"
+					label="MOD_SLIDESHOWCK_AUTOADVANCE_LABEL"
+					description="MOD_SLIDESHOWCK_AUTOADVANCE_DESC"
+					icon="control_play.png"
+					class="btn-group"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field
+					name="hover"
+					type="ckradio"
+					default="1"
+					label="MOD_SLIDESHOWCK_HOVER_LABEL"
+					description="MOD_SLIDESHOWCK_HOVER_DESC"
+					icon="control_pause.png"
+					class="btn-group"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field
+					name="displayorder"
+					type="cklist"
+					default="normal"
+					label="MOD_SLIDESHOWCK_DISPLAYORDER_LABEL"
+					description="MOD_SLIDESHOWCK_DISPLAYORDER_DESC"
+					icon="control_repeat.png"
+				>
+					<option value="normal">MOD_SLIDESHOWCK_DISPLAYORDER_NORMAL</option>
+					<option value="shuffle">MOD_SLIDESHOWCK_DISPLAYORDER_SHUFFLE</option>
+				</field>
+				<field
+					name="limitslides"
+					type="cktext"
+					default=""
+					label="MOD_SLIDESHOWCK_LIMITSLIDES_LABEL"
+					description="MOD_SLIDESHOWCK_LIMITSLIDES_DESC"
+					icon="application_view_tile.png"
+					
+					/>
+				<field
+					name="fullpage"
+					type="ckradio"
+					default="0"
+					label="MOD_SLIDESHOWCK_FULLPAGE_LABEL"
+					description="MOD_SLIDESHOWCK_FULLPAGE_DESC"
+					class="btn-group"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field
+					name="imagetarget"
+					type="cklist"
+					default="_parent"
+					label="MOD_SLIDESHOWCK_IMAGETARGET_LABEL"
+					description="MOD_SLIDESHOWCK_IMAGETARGET_DESC"
+				>
+					<option value="_parent">MOD_SLIDESHOWCK_SAMEWINDOW</option>
+					<option value="_blank">MOD_SLIDESHOWCK_NEWWINDOW</option>
+					<option value="lightbox">MOD_SLIDESHOWCK_LIGHTBOX</option>
+				</field>
+				<field
+					name="container"
+					type="cktext"
+					default=""
+					label="MOD_SLIDESHOWCK_CONTAINER_LABEL"
+					description="MOD_SLIDESHOWCK_CONTAINER_DESC"
+					class="btn-group"
+				/>
+				<field 
+					name="mobileimagespacer"
+					label="MOD_SLIDESHOWCK_MOBILEIMAGE_SPACER_LABEL"
+					type="ckspacer"
+					style="title"
+				/>
+				<field
+					name="usemobileimage"
+					type="ckradio"
+					default="0"
+					label="MOD_SLIDESHOWCK_USEMOBILEIMAGE_LABEL"
+					description="MOD_SLIDESHOWCK_USEMOBILEIMAGE_DESC"
+					class="btn-group"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field
+					name="mobileimageresolution"
+					type="cktext"
+					default="640"
+					label="MOD_SLIDESHOWCK_MOBILEIMAGERESOLUTION_LABEL"
+					description="MOD_SLIDESHOWCK_MOBILEIMAGERESOLUTION_DESC"
+					icon="width.png"
+					suffix="px" 
+				/>
+
+			</fieldset>
+
+			<fieldset name="lightboxoptions" label="MOD_SLIDESHOWCK_OPTIONS_LIGHTBOX">
+				<field
+					name="slideshowparamsinfo"
+					label="MOD_SLIDESHOWCK_CHECKPARAMSPLUGIN"
+					type="cktestslideshowparamsplugin"
+					style="link"
+					icon="information.png"
+				/>
+			</fieldset>
+
+			<fieldset name="advanced">
+
+				<field
+					name="loadjquery"
+					type="ckradio"
+					default="1"
+					label="MOD_SLIDESHOWCK_LOADJQUERY_LABEL"
+					description="MOD_SLIDESHOWCK_LOADJQUERY_DESC"
+					icon="page_white_wrench.png"
+					class="btn-group"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field
+					name="loadjqueryeasing"
+					type="ckradio"
+					default="1"
+					label="MOD_SLIDESHOWCK_LOADJQUERYEASING_LABEL"
+					description="MOD_SLIDESHOWCK_LOADJQUERYEASING_DESC"
+					icon="page_white_wrench.png"
+					class="btn-group"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				
+				<field
+					name="autocreatethumbs"
+					type="ckradio"
+					default="1"
+					label="MOD_SLIDESHOWCK_AUTOCREATETHUMBS_LABEL"
+					description="MOD_SLIDESHOWCK_AUTOCREATETHUMBS_DESC"
+					icon="application_cascade.png"
+					class="btn-group"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field
+					name="layout"
+					type="ckmodulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+					icon="layout.png" />
+
+				<field
+					name="moduleclass_sfx"
+					type="cktext"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+					icon="text_signature.png" />
+
+				<field
+					name="cache"
+					type="cklist"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC" >
+					<option	value="1">JGLOBAL_USE_GLOBAL</option>
+					<option	value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="cktext"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC"
+					icon="hourglass.png"
+					suffix="min" />
+
+				<field
+					name="cachemode"
+					type="hidden"
+					default="itemid" >
+					<option	value="itemid"></option>
+				</field>
+
+			</fieldset>
+			<fieldset name="articlesoptions" label="MOD_SLIDESHOWCK_ARTICLEOPTIONS">
+				<field
+					name="articlelength"
+					type="cktext"
+					default="150"
+					label="MOD_SLIDESHOWCK_ARTICLELENGTH_LABEL"
+					description="MOD_SLIDESHOWCK_ARTICLELENGTH_DESC"
+					icon="text_signature.png"
+				/>
+				<field
+					name="articlelink"
+					type="cklist"
+					label="MOD_SLIDESHOWCK_ARTICLELINK_LABEL"
+					description="MOD_SLIDESHOWCK_ARTICLELINK_DESC"
+					icon="link.png"
+					default="readmore"
+				>
+					<option value="readmore">MOD_SLIDESHOWCK_READMORE_OPTION</option>
+					<option value="title">MOD_SLIDESHOWCK_TITLE_OPTION</option>
+					<option value="image">MOD_SLIDESHOWCK_IMAGE_OPTION</option>
+				</field>
+				<field
+					name="articletitle"
+					type="cklist"
+					label="MOD_SLIDESHOWCK_ARTICLETITLE_LABEL"
+					description="MOD_SLIDESHOWCK_ARTICLETITLE_DESC"
+					icon="text_heading_3.png"
+					default="h3"
+				>
+					<option value="h2">H2</option>
+					<option value="h3">H3</option>
+					<option value="h4">H4</option>
+					<option value="h5">H5</option>
+					<option value="div">DIV</option>
+				</field>
+				<field
+					name="showarticletitle"
+					type="cklist"
+					label="MOD_SLIDESHOWCK_SHOWARTICLETITLE_LABEL"
+					description="MOD_SLIDESHOWCK_SHOWARTICLETITLE_DESC"
+					icon="text_dropcaps.png"
+					default="1"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+			<fieldset name="captionstyles" label="MOD_SLIDESHOWCK_CAPTIONSTYLES">
+				<field
+					name="usecaption"
+					type="ckradio"
+					label="MOD_SLIDESHOWCK_USECAPTION_LABEL"
+					description="MOD_SLIDESHOWCK_USECAPTION_DESC"
+					class="btn-group"
+					default="1"
+					>
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				<field
+					name="usecaptiondesc"
+					type="ckradio"
+					label="MOD_SLIDESHOWCK_USECAPTIONDESC_LABEL"
+					description="MOD_SLIDESHOWCK_USECAPTIONDESC_DESC"
+					class="btn-group"
+					default="1"
+					showon="usecaption:1"
+					>
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				<field
+					name="captionresponsiveckspacer"
+					type="ckspacer"
+					label="MOD_SLIDESHOWCK_SPACER_RESPONSIVE"
+					style="title"
+				/>
+				<field
+					name="usecaptionresponsive"
+					type="cklist"
+					label="MOD_SLIDESHOWCK_USERESPONSIVECAPTION_LABEL"
+					description="MOD_SLIDESHOWCK_USERESPONSIVECAPTION_DESC"
+					icon="ipod.png"
+					class="btn-group"
+					default="1"
+					>
+						<option value="2">MOD_SLIDESHOWCK_RESOLUTION_ADAPTATIVE</option>
+						<option value="1">MOD_SLIDESHOWCK_RESOLUTION_STEP</option>
+						<option value="0">JNO</option>
+				</field>
+				<field
+					name="captionresponsiveresolution"
+					type="cktext"
+					label="MOD_SLIDESHOWCK_RESPONSIVERESOLUTION_LABEL"
+					description="MOD_SLIDESHOWCK_RESPONSIVERESOLUTION_DESC"
+					icon="width.png"
+					default="480"
+				/>
+				<field
+					name="captionresponsivefontsize"
+					type="cktext"
+					label="MOD_SLIDESHOWCK_RESPONSIVEFONTSIZE_LABEL"
+					description="MOD_SLIDESHOWCK_RESPONSIVEFONTSIZE_DESC"
+					icon="style.png"
+					default="0.6em"
+					showon="usecaptionresponsive:1"
+				/>
+				<field
+					name="captionresponsivehidecaption"
+					type="ckradio"
+					label="MOD_SLIDESHOWCK_RESPONSIVEHIDECAPTION_LABEL"
+					description="MOD_SLIDESHOWCK_RESPONSIVEHIDECAPTION_DESC"
+					icon="style_delete.png"
+					class="btn-group"
+					default="0"
+					>
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+				</field>
+				<field
+					name="captionstylesfontckspacer"
+					type="ckspacer"
+					label="MOD_SLIDESHOWCK_SPACER_STYLESFONT"
+					style="title"
+				/>
+				<field
+					name="captionstylesusefont"
+					type="ckradio"
+					default="1"
+					label="MOD_SLIDESHOWCK_USEFONT_LABEL"
+					description="MOD_SLIDESHOWCK_USEFONT_DESC"
+					class="btn-group"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field
+					name="captionstylestextgfont"
+					type="cklist"
+					default="Droid Sans"
+					label="MOD_SLIDESHOWCK_GFONT_LABEL"
+					description="MOD_SLIDESHOWCK_GFONT_DESC"
+					icon="style.png"
+					class="menustyles"
+				>
+					<option value="0">- Default -</option>
+					<option value="Abel">Abel</option>
+					<option value="Abril Fatface">Abril Fatface</option>
+					<option value="Acme">Acme</option>
+					<option value="Actor">Actor</option>
+					<option value="Aclonica">Aclonica</option>
+					<option value="Adamina">Adamina</option>
+					<option value="Aguafina Script">Aguafina Script</option>
+					<option value="Aladin">Aladin</option>
+					<option value="Aldrich">Aldrich</option>
+					<option value="Alice">Alice</option>
+					<option value="Alex Brush">Alex Brush</option>
+					<option value="Alfa Slab One">Alfa Slab One</option>
+					<option value="Allan">Allan</option>
+					<option value="Allerta">Allerta</option>
+					<option value="Allerta Stencil">Allerta Stencil</option>
+					<option value="Alike">Alike</option>
+					<option value="Alike Angular">Alike Angular</option>
+					<option value="Almendra">Almendra</option>
+					<option value="Almendra SC">Almendra SC</option>
+					<option value="Amaranth">Amaranth</option>
+					<option value="Amatic SC">Amatic SC</option>
+					<option value="Andada">Andada</option>
+					<option value="Andika">Andika</option>
+					<option value="Annie Use Your Telescope">Annie Use Your Telescope</option>
+					<option value="Anonymous Pro">Anonymous Pro</option>
+					<option value="Antic">Antic</option>
+					<option value="Anton">Anton</option>
+					<option value="Architects Daughter">Architects Daughter</option>
+					<option value="Arbutus">Arbutus</option>
+					<option value="Arapey">Arapey</option>
+					<option value="Arimo">Arimo</option>
+					<option value="Armata">Armata</option>
+					<option value="Arzonia">Arizonia</option>
+					<option value="Artifika">Artifika</option>
+					<option value="Arvo">Arvo</option>
+					<option value="Asset">Asset</option>
+					<option value="Astloch">Astloch</option>
+					<option value="Atomic Age">Atomic Age</option>
+					<option value="Aubrey">Aubrey</option>
+					<option value="Asul">Asul</option>
+					<option value="Bd Script">Bad Script</option>
+					<option value="Baumans">Baumans</option>
+					<option value="Basic">Basic</option>
+					<option value="Bangers">Bangers</option>
+					<option value="Bathazar">Bathazar</option>
+					<option value="Belgrano">Belgrano</option>
+					<option value="Bentham">Bentham</option>
+					<option value="Bevan">Bevan</option>
+					<option value="Bilbo">Bilbo</option>
+					<option value="Bilbo Swash Caps">Bilbo Swash Caps</option>
+					<option value="Bitter">Bitter</option>
+					<option value="Bigshot One">Bigshot One</option>
+					<option value="Black Ops One">Black Ops One</option>
+					<option value="Bonbon">Bonbon</option>
+					<option value="Boogaloo">Boogaloo</option>
+					<option value="Bowlby One">Bowlby One</option>
+					<option value="Bowlby One SC">Bowlby One SC</option>
+					<option value="Brawler">Brawler</option>
+					<option value="Bree Serif">Bree Serif</option>
+					<option value="Bubblegun Sans">Bubblegun Sans</option>
+					<option value="Buda">Buda</option>
+					<option value="Buenard">Buenard</option>
+					<option value="Butcherman">Butcherman</option>
+					<option value="Cabin">Cabin</option>
+					<option value="Cabin Condensed">Cabin Condensed</option>
+					<option value="Cabin Sketch">Cabin Sketch</option>
+					<option value="Caesar Dressing">Caesar Dressing</option>
+					<option value="Calligraffitti">Calligraffitti</option>
+					<option value="Cambo">Cambo</option>
+					<option value="Candal">Candal</option>
+					<option value="Cantarell">Cantarell</option>
+					<option value="Cardo">Cardo</option>
+					<option value="Carme">Carme</option>
+					<option value="Carter One">Carter One</option>
+					<option value="Caudex">Caudex</option>
+					<option value="Cedarville Cursive">Cedarville Cursive</option>
+					<option value="Cevivhe One">Cevivhe One</option>
+					<option value="Cagliostro">Cagliostro</option>
+					<option value="Changa One">Changa One</option>
+					<option value="Chango">Chango</option>
+					<option value="Chelsea Market">Chelsea Market</option>
+					<option value="Chicle">Chicle</option>
+					<option value="Chiva">Chiva</option>
+					<option value="Chivo">Chivo</option>
+					<option value="Coda">Coda</option>
+					<option value="Coda Caption">Coda Caption</option>
+					<option value="Concert One">Concert One</option>
+					<option value="Contrail One">Contrail One</option>
+					<option value="Convergence">Convergence</option>
+					<option value="Comfortaa Book">Comfortaa Book</option>
+					<option value="Comfortaa Normal">Comfortaa Normal</option>
+					<option value="Cookie">Cookie</option>
+					<option value="Copse">Copse</option>
+					<option value="Corben">Corben</option>
+					<option value="Cousine">Cousine</option>
+					<option value="Coustard">Coustard</option>
+					<option value="Covered By Your Grace">Covered By Your Grace</option>
+					<option value="Creepster">Creepster</option>
+					<option value="Crete Round">Crete Round</option>
+					<option value="Crimson Text">Crimson Text</option>
+					<option value="Cuprum">Cuprum</option>
+					<option value="Damion">Damion</option>
+					<option value="Dawning of a New Day">Dawning of a New Day</option>
+					<option value="Days One">Days One</option>
+					<option value="Delius">Delius</option>
+					<option value="Delius Swash Caps">Delius Swash Caps</option>
+					<option value="Delius Unicase">Delius Unicase</option>
+					<option value="Devonshire">Devonshire</option>
+					<option value="Didact Gothic">Didact Gothic</option>
+					<option value="Dorsa">Dorsa</option>
+					<option value="Dr Sugiyama">Dr Sugiyama</option>
+					<option value="Droid Sans">Droid Sans</option>
+					<option value="Droid Sans Mono">Droid Sans Mono</option>
+					<option value="Droid Serif">Droid Serif</option>
+					<option value="Duru Sans">Duru Sans</option>
+					<option value="Dynalight">Dynalight</option>
+					<option value="Eater">Eater</option>
+					<option value="EB Garamond">EB Garamond</option>
+					<option value="Electrolize">Electrolize</option>
+					<option value="Engagement">Engagement</option>
+					<option value="Enriqueta">Enriqueta</option>
+					<option value="Exo">Exo</option>
+					<option value="Expletus Sans">Expletus Sans</option>
+					<option value="Fascinate">Fascinate</option>
+					<option value="Fascinate Inline">Fascinate Inline</option>
+					<option value="Fanwood Text">Fanwood Text</option>
+					<option value="Federo">Federo</option>
+					<option value="Federant">Federant</option>
+					<option value="Fjord One">Fjord One</option>
+					<option value="Flamenco">Flamenco</option>
+					<option value="Flavors">Flavors</option>
+					<option value="Fondamento">Fondamento</option>
+					<option value="Forum">Forum</option>
+					<option value="Francois One">Francois One</option>
+					<option value="Fresca">Fresca</option>
+					<option value="Frijole">Francois One</option>
+					<option value="Fugaz One">Fugaz One</option>
+					<option value="Galdeano">Galdeano</option>
+					<option value="Gentium Basic">Gentium Basic</option>
+					<option value="Gentium Book Basic">Gentium Book Basic</option>
+					<option value="Geo">Geo</option>
+					<option value="Geostar">Geostar</option>
+					<option value="Geostar Fill">Geostar Fill</option>
+					<option value="Give You Glory">Give You Glory</option>
+					<option value="Gloria Hallelujah">Gloria Hallelujah</option>
+					<option value="Goblin One">Goblin One</option>
+					<option value="Gochi Hand">Gochi Hand</option>
+					<option value="Gravitas One">Gravitas One</option>
+					<option value="Gruppo">Gruppo</option>
+					<option value="Habibi">Habibi</option>
+					<option value="Hammersmith One">Hammersmith One</option>
+					<option value="Handlee">Handlee</option>
+					<option value="Herr Von Muellerhoff">Herr Von Muellerhoff</option>
+					<option value="Holtwood One SC">Holtwood One SC</option>
+					<option value="Iceland">Iceland</option>
+					<option value="Indie Flower">Indie Flower</option>
+					<option value="IM Fell Double Pica">IM Fell Double Pica</option>
+					<option value="IM Fell Double Pica SC">IM Fell Double Pica SC</option>
+					<option value="IM Fell DW Pica">IM Fell DW Pica</option>
+					<option value="IM Fell DW Pica SC">IM Fell DW Pica SC</option>
+					<option value="IM Fell English">IM Fell English</option>
+					<option value="IM Fell English SC">IM Fell English SC</option>
+					<option value="IM Fell French Canon">IM Fell French Canon</option>
+					<option value="IM Fell French Canon SC">IM Fell French Canon SC</option>
+					<option value="IM Fell Great Primer">IM Fell Great Primer</option>
+					<option value="IM Fell Great Primer SC">IM Fell Great Primer SC</option>
+					<option value="Inconsolata">Inconsolata</option>
+					<option value="Inder">Inder</option>
+					<option value="Irish Grover">Irish Grover</option>
+					<option value="Istok Web">Istok Web</option>
+					<option value="Italianno">Italianno</option>
+					<option value="Jim Nightshade">Jim Nightshade</option>
+					<option value="Jockey One">Jockey One</option>
+					<option value="Josefin Sans">Josefin Sans</option>
+					<option value="Josefin Slab">Josefin Slab</option>
+					<option value="Judson">Judson</option>
+					<option value="Julee">Julee</option>
+					<option value="Jura">Jura</option>
+					<option value="Just Another Hand">Just Another Hand</option>
+					<option value="Just Me Again Down Here">Just Me Again Down Here</option>
+					<option value="Kameron">Kameron</option>
+					<option value="Kelly Slab">Kelly Slab</option>
+					<option value="Kenia">Kenia</option>
+					<option value="Knewave">Knewave</option>
+					<option value="Kreon">Kreon</option>
+					<option value="Kristi">Kristi</option>
+					<option value="La Belle Aurore">La Belle Aurore</option>
+					<option value="Lancelot">Lancelot</option>
+					<option value="Lato">Lato</option>
+					<option value="League Script">League Script</option>
+					<option value="Leckerli One">Leckerli One</option>
+					<option value="Lekton">Lekton</option>
+					<option value="Lemon">Lemon</option>
+					<option value="Lato">Lato</option>
+					<option value="Limelight">Limelight</option>
+					<option value="Linden Hill">Linden Hill</option>
+					<option value="Lora">Lora</option>
+					<option value="Lobster">Lobster</option>
+					<option value="Lobster Two">Lobster Two</option>
+					<option value="Love Ya Like A Sister">Love Ya Like A Sister</option>
+					<option value="Loved by the King">Loved by the King</option>
+					<option value="Luckiest Guy">Luckiest Guy</option>
+					<option value="Maiden Orange">Maiden Orange</option>
+					<option value="Mako">Mako</option>
+					<option value="Marck Script">Marck Script</option>
+					<option value="Marko One">Marko One</option>
+					<option value="Marvel">Marvel</option>
+					<option value="Mate">Mate</option>
+					<option value="Mate SC">Mate SC</option>
+					<option value="Maven Pro">Maven Pro</option>
+					<option value="MedievalSharp">MedievalSharp</option>
+					<option value="Medula One">Medula One</option>
+					<option value="Megrim">Megrim</option>
+					<option value="Merienda One">Merienda One</option>
+					<option value="Mermelad">Mermelad</option>
+					<option value="Merriweather">Merriweather</option>
+					<option value="Metamorphous">Metamorphous</option>
+					<option value="Metrophobic">Metrophobic</option>
+					<option value="Michroma">Michroma</option>
+					<option value="Miltonian">Miltonian</option>
+					<option value="Miltonian Tattoo">Miltonian Tattoo</option>
+					<option value="Miniver">Miniver</option>
+					<option value="Miss Fajardose">Miss Fajardose</option>
+					<option value="Miss Saint Delafield">Miss Saint Delafield</option>
+					<option value="Modern Antiqua">Modern Antiqua</option>
+					<option value="Molengo">Molengo</option>
+					<option value="Monofett">Monofett</option>
+					<option value="Monoton">Monoton</option>
+					<option value="Monsieur La Doulaise">Monsieur La Doulaise</option>
+					<option value="Montez">Montez</option>
+					<option value="Montserrat">Montserrat</option>
+					<option value="Mountains of Christmas">Mountains of Christmas</option>
+					<option value="Mr Bedford">Mr Bedford</option>
+					<option value="Mr Dafoe">Mr Dafoe</option>
+					<option value="Mr De Gaviland">Mr De Gaviland</option>
+					<option value="Mrs Sheppards">Mrs Sheppards</option>
+					<option value="Muli">Muli</option>
+					<option value="Neucha">Neucha</option>
+					<option value="Neuton">Neuton</option>
+					<option value="News Cycle">News Cycle</option>
+					<option value="Niconne">Niconne</option>
+					<option value="Nixie One">Nixie One</option>
+					<option value="Nobile">Nobile</option>
+					<option value="Nosifer">Nosifer</option>
+					<option value="Noticia Text">Noticia Text</option>
+					<option value="Nova Round">Nova Round</option>
+					<option value="Nova Script">Nova Script</option>
+					<option value="Nova Slim">Nova Slim</option>
+					<option value="Nova Cut">Nova Cut</option>
+					<option value="Nova Oval">Nova Oval</option>
+					<option value="Nova Mono">Nova Mono</option>
+					<option value="Nova Flat">Nova Flat</option>
+					<option value="Numans">Numans</option>
+					<option value="Nunito">Nunito</option>
+					<option value="OFL Sorts Mill Goudy TT">OFL Sorts Mill Goudy TT</option>
+					<option value="Oldenburg">Oldenburg</option>
+					<option value="Old Standard TT">Old Standard TT</option>
+					<option value="Orbitron">Orbitron</option>
+					<option value="Original Surfer">Original Surfer</option>
+					<option value="Oswald">Oswald</option>
+					<option value="Ovo">Ovo</option>
+					<option value="Overlock">Overlock</option>
+					<option value="Overlock SC">Overlock SC</option>
+					<option value="Over the Rainbow">Over the Rainbow</option>
+					<option value="Pacifico">Pacifico</option>
+					<option value="Passion One">Passion One</option>
+					<option value="Passero One">Passero One</option>
+					<option value="Patrick Hand">Patrick Hand</option>
+					<option value="Patua One">Patua One</option>
+					<option value="Paytone One">Paytone One</option>
+					<option value="Petrona">Petrona</option>
+					<option value="Piedra">Piedra</option>
+					<option value="Play">Play</option>
+					<option value="Plaster">Plaster</option>
+					<option value="Playball">Playball</option>
+					<option value="Playfair Display">Playfair Display</option>
+					<option value="Pinyon Script">Pinyon Script</option>
+					<option value="Podkova">Podkova</option>
+					<option value="Poly">Poly</option>
+					<option value="Pompiere">Pompiere</option>
+					<option value="Prata">Prata</option>
+					<option value="Prociono">Prociono</option>
+					<option value="PT Sans">PT Sans</option>
+					<option value="PT Sans Caption">PT Sans Caption</option>
+					<option value="PT Sans Narrow">PT Sans Narrow</option>
+					<option value="PT Serif">PT Serif</option>
+					<option value="PT Serif Caption">PT Serif Caption</option>
+					<option value="Philosopher">Philosopher</option>
+					<option value="Poller One">Poller One</option>
+					<option value="Puritan">Puritan</option>
+					<option value="Quantico">Quantico</option>
+					<option value="Quattrocento">Quattrocento</option>
+					<option value="Quattrocento Sans">Quattrocento Sans</option>
+					<option value="Questrial">Questrial</option>
+					<option value="Quicksand">Quicksand</option>
+					<option value="Quigley">Quigley</option>
+					<option value="Rancho">Rancho</option>
+					<option value="Raleway">Raleway</option>
+					<option value="Rammetto One">Rammetto One</option>
+					<option value="Rationale">Rationale</option>
+					<option value="Redressed">Redressed</option>
+					<option value="Reenie Beanie">Reenie Beanie</option>
+					<option value="Ribeye">Ribeye</option>
+					<option value="Ribeye Marrow">Ribeye Marrow</option>
+					<option value="Righteous">Righteous</option>
+					<option value="Rochester">Rochester</option>
+					<option value="Rosario">Rosario</option>
+					<option value="Rokkitt">Rokkitt</option>
+					<option value="Ruge Boogie">Ruge Boogie</option>
+					<option value="Ruslan Display">Ruslan Display</option>
+					<option value="Ruthie">Ruthie</option>
+					<option value="Sail">Sail</option>
+					<option value="Salsa">Salsa</option>
+					<option value="Sancreek">Sancreek</option>
+					<option value="Sanista One">Sanista One</option>
+					<option value="Sarina">Sarina</option>
+					<option value="Satisfy">Satisfy</option>
+					<option value="Shanti">Shanti</option>
+					<option value="Short Stack">Short Stack</option>
+					<option value="Signika">Signika</option>
+					<option value="Signika Negative">Signika Negative</option>
+					<option value="Sigmar One">Sigmar One</option>
+					<option value="Smokum">Smokum</option>
+					<option value="Smythe">Smythe</option>
+					<option value="Sniglet">Sniglet</option>
+					<option value="Special Elite">Special Elite</option>
+					<option value="Spicy Rice">Spicy Rice</option>
+					<option value="Stardos Stencil">Stardos Stencil</option>
+					<option value="Stint Ultra Condensed">Stint Ultra Condensed</option>
+					<option value="Stoke">Stoke</option>
+					<option value="Sue Ellen Francisco">Sue Ellen Francisco</option>
+					<option value="Swanky and Moo Moo">Swanky and Moo Moo</option>
+					<option value="Shadows into Light">Shadows into Light</option>
+					<option value="Sofia">Sofia</option>
+					<option value="Sorts Mill Goudy">Sorts Mill Goudy</option>
+					<option value="Spirax">Spirax</option>
+					<option value="Squada One">Squanda One</option>
+					<option value="Supermercado One">Supermercado One</option>
+					<option value="Syncopate">Syncopate</option>
+					<option value="Tangerine">Tangerine</option>
+					<option value="Tenor Sans">Tenor Sans</option>
+					<option value="Terminal Dosis">Terminal Dosis</option>
+					<option value="Terminal Dosis Light">Terminal Dosis Light</option>
+					<option value="The Girl Next Door">The Girl Next Door</option>
+					<option value="Tienne">Tienne</option>
+					<option value="Tinos">Tinos</option>
+					<option value="Trade Winds">Trade Winds</option>
+					<option value="Trykker">Trykker</option>
+					<option value="Tulpen One">Tulpen One</option>
+					<option value="Ubuntu">Ubuntu</option>
+					<option value="Ubuntu Mon">Ubuntu Mon</option>
+					<option value="Ubuntu Condensed">Ubuntu Condensed</option>
+					<option value="Ultra">Ultra</option>
+					<option value="Uncial Antiqua">Uncial Antiqua</option>
+					<option value="UnifrakturCook">UnifrakturCook</option>
+					<option value="UnifrakturMaguntia">UnifrakturMaguntia</option>
+					<option value="Unlock">Unlock</option>
+					<option value="Unna">Unna</option>
+					<option value="Varela">Varela</option>
+					<option value="Varela Round">Varela Round</option>
+					<option value="Vast Shadow">Vast Shadow</option>
+					<option value="Vibur">Vibur</option>
+					<option value="Vidaloka">Vidaloka</option>
+					<option value="Vigo">Vigo</option>
+					<option value="Volkhov">Volkhov</option>
+					<option value="Vollkorn">Vollkorn</option>
+					<option value="Voltaire">Voltaire</option>
+					<option value="VT323">VT323</option>
+					<option value="Waiting for the Sunrise">Waiting for the Sunrise</option>
+					<option value="Wallpoet">Wallpoet</option>
+					<option value="Wire One">Wire One</option>
+					<option value="Yanone Kaffeesatz">Yanone Kaffeesatz</option>
+					<option value="Yellowtail">Yellowtail</option>
+					<option value="Yeseva One">Yeseva One</option>
+					<option value="Yesteryear">Yesteryear</option>
+					<option value="Zeyada">Zeyada</option>
+				</field>
+				<field
+					name="captionstylesfontsize"
+					type="cktext"
+					default="1.1em"
+					label="MOD_SLIDESHOWCK_FONTSIZE_LABEL"
+					description="MOD_SLIDESHOWCK_FONTSIZE_DESC"
+					icon="style.png"
+					class="captionstyles"
+				/>
+				<field
+					name="captionstylesfontcolor"
+					type="ckcolor"
+					default=""
+					label="MOD_SLIDESHOWCK_FONTCOLOR_LABEL"
+					description="MOD_SLIDESHOWCK_FONTCOLOR_DESC"
+					class="captionstyles"
+				/>
+				<field
+					name="captionstylesfontweight"
+					type="ckradio"
+					default="normal"
+					label="MOD_SLIDESHOWCK_FONTWEIGHT_LABEL"
+					description="MOD_SLIDESHOWCK_FONTWEIGHT_DESC"
+					optionstyles="width:50px;"
+					icon="text_bold.png"
+					class="btn-group"
+				>
+					<option value="bold">MOD_SLIDESHOWCK_BOLD</option>
+					<option value="normal">MOD_SLIDESHOWCK_NORMAL</option>
+				</field>
+				<field
+					name="captionstylesdescfontsize"
+					type="cktext"
+					default="0.8em"
+					label="MOD_SLIDESHOWCK_DESCFONTSIZE_LABEL"
+					description="MOD_SLIDESHOWCK_DESCFONTSIZE_DESC"
+					icon="style.png"
+					class="captionstyles"
+				/>
+				<field
+					name="captionstylesdescfontcolor"
+					type="ckcolor"
+					default=""
+					label="MOD_SLIDESHOWCK_DESCFONTCOLOR_LABEL"
+					description="MOD_SLIDESHOWCK_DESCFONTCOLOR_DESC"
+					class="captionstyles"
+				/>
+				<field
+					name="captionstylesmarginckspacer"
+					type="ckspacer"
+					label="MOD_SLIDESHOWCK_SPACER_STYLESMARGIN"
+					style="title"
+				/>
+				<field
+					name="captionstylesusemargin"
+					type="ckradio"
+					default="1"
+					label="MOD_SLIDESHOWCK_USEMARGIN_LABEL"
+					description="MOD_SLIDESHOWCK_USEMARGIN_DESC"
+					class="btn-group"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field
+					name="captionstylesmargintop"
+					type="cktext"
+					default="0"
+					label="MOD_SLIDESHOWCK_MARGINTOP_LABEL"
+					description="MOD_SLIDESHOWCK_MARGINTOP_DESC"
+					icon="margin_top.png"
+					suffix="px/%"
+					class="captionstyles"
+				/>
+				<field
+					name="captionstylesmarginright"
+					type="cktext"
+					default="0"
+					label="MOD_SLIDESHOWCK_MARGINRIGHT_LABEL"
+					description="MOD_SLIDESHOWCK_MARGINRIGHT_DESC"
+					icon="margin_right.png"
+					suffix="px/%"
+					class="captionstyles"
+				/>
+				<field
+					name="captionstylesmarginbottom"
+					type="cktext"
+					default="0"
+					label="MOD_SLIDESHOWCK_MARGINBOTTOM_LABEL"
+					description="MOD_SLIDESHOWCK_MARGINBOTTOM_DESC"
+					icon="margin_bottom.png"
+					suffix="px/%"
+					class="captionstyles"
+				/>
+				<field
+					name="captionstylesmarginleft"
+					type="cktext"
+					default="0"
+					label="MOD_SLIDESHOWCK_MARGINLEFT_LABEL"
+					description="MOD_SLIDESHOWCK_MARGINLEFT_DESC"
+					icon="margin_left.png"
+					suffix="px/%"
+					class="captionstyles"
+				/>
+				<field
+					name="captionstylespaddingtop"
+					type="cktext"
+					default="0"
+					label="MOD_SLIDESHOWCK_PADDINGTOP_LABEL"
+					description="MOD_SLIDESHOWCK_PADDINGTOP_DESC"
+					icon="padding_top.png"
+					suffix="px/%"
+					class="captionstyles"
+				/>
+				<field
+					name="captionstylespaddingright"
+					type="cktext"
+					default="0"
+					label="MOD_SLIDESHOWCK_PADDINGRIGHT_LABEL"
+					description="MOD_SLIDESHOWCK_PADDINGRIGHT_DESC"
+					icon="padding_right.png"
+					suffix="px/%"
+					class="captionstyles"
+				/>
+				<field
+					name="captionstylespaddingbottom"
+					type="cktext"
+					default="0"
+					label="MOD_SLIDESHOWCK_PADDINGBOTTOM_LABEL"
+					description="MOD_SLIDESHOWCK_PADDINGBOTTOM_DESC"
+					icon="padding_bottom.png"
+					suffix="px/%"
+					class="captionstyles"
+				/>
+				<field
+					name="captionstylespaddingleft"
+					type="cktext"
+					default="0"
+					label="MOD_SLIDESHOWCK_PADDINGLEFT_LABEL"
+					description="MOD_SLIDESHOWCK_PADDINGLEFT_DESC"
+					icon="padding_left.png"
+					suffix="px/%"
+					class="captionstyles"
+				/>
+				<field
+					name="captionstylesbackgroundckspacer"
+					type="ckspacer"
+					label="MOD_SLIDESHOWCK_SPACER_STYLESBACKGROUND"
+					style="title"
+				/>
+				<field
+					name="captionstylesusebackground"
+					type="ckradio"
+					default="1"
+					label="MOD_SLIDESHOWCK_USEBACKGROUND_LABEL"
+					description="MOD_SLIDESHOWCK_USEBACKGROUND_DESC"
+					class="btn-group"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field
+					name="captionstylesbgcolor1"
+					type="ckcolor"
+					default=""
+					label="MOD_SLIDESHOWCK_BGCOLOR1_LABEL"
+					description="MOD_SLIDESHOWCK_BGCOLOR1_DESC"
+					class="captionstyles"
+				/>
+				<field
+					name="captionstylesbgopacity"
+					type="cktext"
+					default="0.6"
+					label="MOD_SLIDESHOWCK_BGOPACITY_LABEL"
+					description="MOD_SLIDESHOWCK_BGOPACITY_DESC"
+					class="captionstyles"
+				/>
+				<field
+					name="captionstylesbgimage"
+					type="ckmedia"
+					label="MOD_SLIDESHOWCK_BACKGROUNDIMAGE_LABEL"
+					labelstyles=""
+					icon="image.png"
+					description="MOD_SLIDESHOWCK_BACKGROUNDIMAGE_DESC"
+					class="captionstyles"
+				/>
+				<field
+					name="captionstylesbgpositionx"
+					type="cktext"
+					default="left"
+					icon="offsetx.png"
+					label="MOD_SLIDESHOWCK_BACKGROUNDPOSITIONX_LABEL"
+					description="MOD_SLIDESHOWCK_BACKGROUNDPOSITIONX_DESC"
+					class="captionstyles"
+				/>
+				<field
+					name="captionstylesbgpositiony"
+					type="cktext"
+					default="top"
+					icon="offsety.png"
+					label="MOD_SLIDESHOWCK_BACKGROUNDPOSITIONY_LABEL"
+					description="MOD_SLIDESHOWCK_BACKGROUNDPOSITIONY_DESC"
+					class="captionstyles"/>
+				<field
+					name="captionstylesbgimagerepeat"
+					type="ckradio"
+					default="repeat"
+					label=""
+					optionstyles="width:40px;"
+					class="btn-group"
+				>
+					<option value="repeat">img:bg_repeat.png</option>
+					<option value="repeat-x">img:bg_repeat-x.png</option>
+					<option value="repeat-y">img:bg_repeat-y.png</option>
+					<option value="no-repeat">img:bg_no-repeat.png</option>
+				</field>
+				<field
+					name="captionstylesbgimagespacer"
+					type="spacer"
+					hr="true" />
+				<field
+					name="captionstylesusegradient"
+					type="ckradio"
+					default="1"
+					label="MOD_SLIDESHOWCK_USEGRADIENT_LABEL"
+					description="MOD_SLIDESHOWCK_USEGRADIENT_DESC"
+					class="btn-group"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field
+					name="captionstylesbgcolor2"
+					type="ckcolor"
+					default=""
+					label="MOD_SLIDESHOWCK_BGCOLOR2_LABEL"
+					description="MOD_SLIDESHOWCK_BGCOLOR2_DESC"
+					class="captionstyles"
+				/>
+				<field
+					name="captionstylesroundedcornersckspacer"
+					type="ckspacer"
+					label="MOD_SLIDESHOWCK_SPACER_STYLESROUNDEDCORNERS"
+					style="title"
+				/>
+				<field
+					name="captionstylesuseroundedcorners"
+					type="ckradio"
+					default="1"
+					label="MOD_SLIDESHOWCK_USEROUNDEDCORNERS_LABEL"
+					description="MOD_SLIDESHOWCK_USEROUNDEDCORNERS_DESC"
+					class="btn-group"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field
+					name="captionstylesroundedcornerstl"
+					type="cktext"
+					default="5"
+					label="MOD_SLIDESHOWCK_ROUNDEDCORNERSTL_LABEL"
+					description="MOD_SLIDESHOWCK_ROUNDEDCORNERSTL_DESC"
+					icon="border_radius_tl.png"
+					suffix="px"
+					class="captionstyles"
+				/>
+				<field
+					name="captionstylesroundedcornerstr"
+					type="cktext"
+					default="5"
+					label="MOD_SLIDESHOWCK_ROUNDEDCORNERSTR_LABEL"
+					description="MOD_SLIDESHOWCK_ROUNDEDCORNERSTR_DESC"
+					icon="border_radius_tr.png"
+					suffix="px"
+					class="captionstyles"
+				/>
+				<field
+					name="captionstylesroundedcornersbr"
+					type="cktext"
+					default="5"
+					label="MOD_SLIDESHOWCK_ROUNDEDCORNERSBR_LABEL"
+					description="MOD_SLIDESHOWCK_ROUNDEDCORNERSBR_DESC"
+					icon="border_radius_br.png"
+					suffix="px"
+					class="captionstyles"
+				/>
+				<field
+					name="captionstylesroundedcornersbl"
+					type="cktext"
+					default="5"
+					label="MOD_SLIDESHOWCK_ROUNDEDCORNERSBL_LABEL"
+					description="MOD_SLIDESHOWCK_ROUNDEDCORNERSBL_DESC"
+					icon="border_radius_bl.png"
+					suffix="px"
+					class="captionstyles"
+				/>
+				<field
+					name="captionstylesshadowckspacer"
+					type="ckspacer"
+					label="MOD_SLIDESHOWCK_SPACER_STYLESSHADOW"
+					style="title"
+				/>
+				<field
+					name="captionstylesuseshadow"
+					type="ckradio"
+					default="1"
+					label="MOD_SLIDESHOWCK_USESHADOW_LABEL"
+					description="MOD_SLIDESHOWCK_USESHADOW_DESC"
+					class="btn-group"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field
+					name="captionstylesshadowcolor"
+					type="ckcolor"
+					default=""
+					label="MOD_SLIDESHOWCK_SHADOWCOLOR_LABEL"
+					description="MOD_SLIDESHOWCK_SHADOWCOLOR_DESC"
+					class="captionstyles"
+				/>
+				<field
+					name="captionstylesshadowblur"
+					type="cktext"
+					default="3"
+					label="MOD_SLIDESHOWCK_SHADOWBLUR_LABEL"
+					description="MOD_SLIDESHOWCK_SHADOWBLUR_DESC"
+					icon="shadow_blur.png"
+					suffix="px"
+					class="captionstyles"
+				/>
+				<field
+					name="captionstylesshadowspread"
+					type="cktext"
+					default="0"
+					label="MOD_SLIDESHOWCK_SHADOWSPREAD_LABEL"
+					description="MOD_SLIDESHOWCK_SHADOWSPREAD_DESC"
+					icon="shadow_spread.png"
+					suffix="px"
+					class="captionstyles"
+				/>
+				<field
+					name="captionstylesshadowoffsetx"
+					type="cktext"
+					default="0"
+					label="MOD_SLIDESHOWCK_OFFSETX_LABEL"
+					description="MOD_SLIDESHOWCK_OFFSETX_DESC"
+					icon="offsetx.png"
+					suffix="px"
+					class="captionstyles"
+				/>
+				<field
+					name="captionstylesshadowoffsety"
+					type="cktext"
+					default="0"
+					label="MOD_SLIDESHOWCK_OFFSETY_LABEL"
+					description="MOD_SLIDESHOWCK_OFFSETY_DESC"
+					icon="offsety.png"
+					suffix="px"
+					class="captionstyles"
+				/>
+				<field
+					name="captionstylesshadowinset"
+					type="ckradio"
+					default="0"
+					label="MOD_SLIDESHOWCK_SHADOWINSET_LABEL"
+					description="MOD_SLIDESHOWCK_SHADOWINSET_DESC"
+					class="btn-group"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="captionstylesbordersckspacer"
+					type="ckspacer"
+					label="MOD_SLIDESHOWCK_SPACER_STYLESBORDERS"
+					style="title"
+				/>
+				<field
+					name="captionstylesuseborders"
+					type="ckradio"
+					default="1"
+					label="MOD_SLIDESHOWCK_USEBORDERS_LABEL"
+					description="MOD_SLIDESHOWCK_USEBORDERS_DESC"
+					class="btn-group"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field
+					name="captionstylesbordercolor"
+					type="ckcolor"
+					default=""
+					label="MOD_SLIDESHOWCK_BORDERCOLOR_LABEL"
+					description="MOD_SLIDESHOWCK_BORDERCOLOR_DESC"
+					class="captionstyles"
+				/>
+				<field
+					name="captionstylesborderwidth"
+					type="cktext"
+					default="1"
+					label="MOD_SLIDESHOWCK_BORDERWIDTH_LABEL"
+					description="MOD_SLIDESHOWCK_BORDERWIDTH_DESC"
+					icon="shape_borders.png"
+					suffix="px"
+					class="captionstyles"
+				/>
+			</fieldset>
+			<fieldset name="slideshowckhikashop" label="MOD_SLIDESHOWCK_HIKASHOP_FIELDSET_LABEL">
+				<field
+					name="slideshowhikashopinfo"
+					label="MOD_SLIDESHOWCKHIKASHOP_CHECKPLUGIN"
+					type="cktestslideshowhikashopplugin"
+					style="link"
+					icon="information.png"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

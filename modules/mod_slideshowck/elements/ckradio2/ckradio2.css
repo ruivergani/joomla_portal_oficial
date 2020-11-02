@@ -1,0 +1,35 @@
+fieldset.ckradio2 {
+    background : url(../images/ckradio2_fieldset_bg.png) left top repeat-x;
+    height: 16px;
+    border: 1px solid silver !important;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    padding: 0;
+    margin-top: 5px !important;
+}
+
+.radioClass {
+    display:none;
+    height: 0;
+    width: 0;
+}
+
+.boutonRadio {
+    display : block;
+    float: left;
+    min-width : 20px;
+    height : 16px;
+    /*border-right: 1px solid white;*/
+    background : url(../images/ckradio2_fieldset_bg_separator.png) right top no-repeat;
+    cursor: pointer;
+    text-align: center;
+    padding: 0px;
+}
+
+.coche {
+    background : url(../images/ckradio2_fieldset_bg_active.png) left top repeat-x;
+}
+
+.radioClass {
+    position : absolute;
+}
